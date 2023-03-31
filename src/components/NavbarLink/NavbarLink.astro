@@ -7,6 +7,9 @@ export type NavbarLinkProps = {
 const { href, text } = Astro.props as NavbarLinkProps;
 ---
 
-<a href={href} class="navbarLink font-bold">
+<a
+  href={href}
+  class="navbarLink text-[1.3rem] py-3 px-4 text-white flex flex-grow bg-white bg-opacity-0 hover:bg-opacity-30 transition-all duration-300"
+>
   {text}
 </a>
