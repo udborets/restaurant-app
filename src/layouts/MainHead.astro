@@ -1,0 +1,18 @@
+---
+export interface MainHeadProps {
+  title: string;
+  description?: string;
+}
+
+const { title = "Restaurant App", description = "Welcome to Restaurant App" } =
+  Astro.props satisfies MainHeadProps;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+</head>
