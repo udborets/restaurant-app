@@ -1,8 +1,8 @@
 ---
-import MainHead from "./MainHead.astro";
+import Header from "@/components/Header/Header.astro";
+import MainHead from "@/layouts/MainHead.astro";
+
 import "@/styles/global.scss";
-import Navbar from "@/components/Navbar/Navbar.astro";
-import type { NavbarLinkProps } from "@/components/NavbarLink/NavbarLink.astro";
 
 interface MainLayoutProps {
   title?: string;
@@ -11,28 +11,12 @@ interface MainLayoutProps {
 
 const { title = "Restaurant App", description = "Welcome to Restaurant App" } =
   Astro.props as MainLayoutProps;
-
-const navbarLinks = [
-  {
-    href: "/",
-    text: "Home",
-  },
-  {
-    href: "/about",
-    text: "About",
-  },
-  {
-    href: "/",
-    text: "Home",
-  },
-] as NavbarLinkProps[];
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <MainHead title={title} description={description} />
   <body class="items-center">
-    <Navbar links={navbarLinks} />
     <slot />
   </body>
 </html>
