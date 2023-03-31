@@ -1,9 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+const title = "Welcome";
+const description = "Welcome to Restaurant App home page";
 ---
 
-<Layout title="Restaurant app">
+<MainLayout {title} {description}>
   <main></main>
-</Layout>
+</MainLayout>
 
 <style></style>
