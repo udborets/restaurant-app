@@ -1,12 +1,11 @@
 ---
 import Header from "@/components/Header/Header.astro";
-import MainHead from "@/layouts/MainHead.astro";
 
 import "@/styles/global.scss";
 
 interface MainLayoutProps {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
 }
 
 const { title = "Restaurant App", description = "Welcome to Restaurant App" } =
@@ -15,7 +14,14 @@ const { title = "Restaurant App", description = "Welcome to Restaurant App" } =
 
 <!DOCTYPE html>
 <html lang="en">
-  <MainHead title={title} description={description} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
   <body class="items-center">
     <Header />
     <slot />
