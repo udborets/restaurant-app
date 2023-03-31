@@ -1,11 +1,10 @@
 ---
 export interface MainHeadProps {
   title: string;
-  description?: string;
+  description: string;
 }
 
-const { title = "Restaurant App", description = "Welcome to Restaurant App" } =
-  Astro.props satisfies MainHeadProps;
+const { title, description } = Astro.props as MainHeadProps;
 ---
 
 <head>
