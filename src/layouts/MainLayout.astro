@@ -1,5 +1,6 @@
 ---
 import MainHead from "./MainHead.astro";
+import "../styles/global.scss";
 
 interface MainLayoutProps {
   title?: string;
@@ -15,12 +16,5 @@ const { title = "Restaurant App", description = "Welcome to Restaurant App" } =
   <MainHead {title} {description} />
   <body class="items-center">
     <slot />
-    <style lang="scss" is:global>
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-      }
-    </style>
   </body>
 </html>
