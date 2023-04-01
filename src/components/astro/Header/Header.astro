@@ -1,20 +1,46 @@
 ---
 import Navbar from "@/components/astro/Navbar/Navbar.astro";
+import { Icon } from "astro-icon";
 ---
 
 <header
-  class="header absolute w-full h-[150px] p-4 z-[3] bg-opacity-50 bg-black"
+  class="header absolute w-full h-[150px] p-4 z-[3] bg-opacity-80 bg-black"
 >
   <div class="header__container w-full h-full flex justify-around items-center">
-    <h1 class="header__title text-[3rem] text-white font-bold font-serif">
-      Punto Di Sapori
+    <h1 class="header__title">
+      <a
+        href="/"
+        class="header__homeLink text-[3rem] text-white font-bold"
+        title="Go to home page">Punto Di Sapori</a
+      >
     </h1>
+    <div class="socials flex gap-5">
+      <a href="https://www.instagram.com/" title="Instagram">
+        <Icon name="mdi:instagram" class="socials__link" />
+      </a>
+      <a href="https://www.facebook.com/" title="Facebook link">
+        <Icon name="ic:baseline-facebook" class="socials__link" />
+      </a>
+      <a href="https://twitter.com/" title="Twitter link">
+        <Icon name="mdi:twitter" class="socials__link" />
+      </a>
+    </div>
     <Navbar />
   </div>
 </header>
 
-<style>
+<style lang="scss">
   .header__title {
     font-family: "Edu NSW ACT Foundation", cursive;
+  }
+  .socials__link {
+    color: white;
+    opacity: 0.5;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease-out;
+    &:hover {
+      opacity: 1;
+    }
   }
 </style>
