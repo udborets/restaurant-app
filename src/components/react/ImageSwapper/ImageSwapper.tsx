@@ -5,14 +5,14 @@ interface ImageSwapperProps {
 }
 
 const ImageSwapper = ({ picturesNames }: ImageSwapperProps) => {
-  const [count, setCount] = useState(picturesNames[0]);
+  const [count, setCount] = useState(0);
   setTimeout(() => {
-    if (count === picturesNames.at(-1)) {
-      setCount(1)
+    if (count === picturesNames.length - 1) {
+      setCount(0);
       return
     }
-    setCount((prevCount) => prevCount + 1)
-  }, 5000)
+    setCount((prevCount) => prevCount + 1);
+  }, 1000)
   return (
     <div className={`imageSwapper overflow-hidden w-full h-[100vh] relative`}>
       {picturesNames.map((src) => (
@@ -21,7 +21,7 @@ const ImageSwapper = ({ picturesNames }: ImageSwapperProps) => {
           src={`src/assets/images/imageSwapper/${src}.jpg`}
           alt="pic"
           key={src}
-          className={`imageSwapper__img z-[0] h-auto w-full absolute top-0 right-0 ${src === count ? 'opacity-100' : 'opacity-0'} duration-[1.3s] transition-all `}
+          className={`imageSwapper__img z-[0] h-auto w-full absolute top-0 right-0 ${src === picturesNames[count] ? 'opacity-100' : 'opacity-0'} duration-[1.3s] transition-all `}
         />
       ))}
       <div className="imageSwapper imageSelectList">
