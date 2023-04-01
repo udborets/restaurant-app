@@ -24,7 +24,8 @@ const ImageSwapper = ({ picturesNames }: ImageSwapperProps) => {
           className={`imageSwapper__img z-[0] object-cover w-full h-full absolute top-0 right-0 ${src === picturesNames[count] ? 'opacity-100' : 'opacity-0'} duration-[1.3s] transition-all `}
         />
       ))}
-      <div className="imageSwapper__imageSelector flex flex-col w-fit gap-4 absolute self-center right-[10px]">
+      <div
+        className="imageSwapper__imageSelector flex flex-col w-fit gap-4 absolute self-center right-[10px] bg-opacity-100 md:bg-opacity-0 bg-black p-2 rounded-[10px]">
         {picturesNames.map((src) => (
           <div
             key={src}
