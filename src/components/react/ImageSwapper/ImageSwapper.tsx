@@ -21,7 +21,7 @@ const ImageSwapper = ({ picturesNames }: ImageSwapperProps) => {
           src={`src/assets/images/imageSwapper/${src}.jpg`}
           alt="pic"
           key={src}
-          className={`z-[-5] h-auto w-full absolute top-0 right-0 ${src === count ? 'opacity-100' : 'opacity-0'} duration-[1.3s] transition-all `}
+          className={`z-[0] h-auto w-full absolute top-0 right-0 ${src === count ? 'opacity-100' : 'opacity-0'} duration-[1.3s] transition-all `}
         />
       ))}
     </div>
