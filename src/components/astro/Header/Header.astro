@@ -2,6 +2,19 @@
 import Navbar from "@/components/astro/Navbar/Navbar.astro";
 ---
 
-<header class="header absolute w-full h-[150px] z-[3] bg-opacity-50 bg-black">
-  <Navbar />
+<header
+  class="header absolute w-full h-[150px] p-4 z-[3] bg-opacity-50 bg-black"
+>
+  <div class="header__container w-full h-full flex justify-around items-center">
+    <h1 class="header__title text-[3rem] text-white font-bold font-serif">
+      Punto Di Sapori
+    </h1>
+    <Navbar />
+  </div>
 </header>
+
+<style>
+  .header__title {
+    font-family: "Edu NSW ACT Foundation", cursive;
+  }
+</style>
