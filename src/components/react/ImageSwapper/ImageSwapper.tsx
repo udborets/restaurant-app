@@ -6,27 +6,32 @@ interface ImageSwapperProps {
 
 const ImageSwapper = ({ picturesNames }: ImageSwapperProps) => {
   const [count, setCount] = useState(0);
-  setTimeout(() => {
+  const imageSwapTimeout = setTimeout(() => {
     if (count === picturesNames.length - 1) {
       setCount(0);
-      return
+      return;
     }
     setCount((prevCount) => prevCount + 1);
   }, 5000)
   return (
-    <div className={`imageSwapper overflow-hidden w-full h-full relative grid content-center`}>
+    <div className={`imageSwapper overflow-hidden h-4/5 relative grid content-center bg-black`}>
       {picturesNames.map((src) => (
         <img
           loading="lazy"
           src={`src/assets/images/imageSwapper/${src}.jpg`}
           alt="pic"
           key={src}
-          className={`imageSwapper__img z-[0] w-full absolute top-0 right-0 ${src === picturesNames[count] ? 'opacity-100' : 'opacity-0'} duration-[1.3s] transition-all `}
+          className={`imageSwapper__img z-[0] object-cover w-full h-full absolute top-0 right-0 ${src === picturesNames[count] ? 'opacity-100' : 'opacity-0'} duration-[1.3s] transition-all `}
         />
       ))}
       <div className="imageSwapper__imageSelector flex flex-col w-fit gap-4 absolute self-center right-[10px]">
         {picturesNames.map((src) => (
           <div
+            key={src}
+            onClick={() => {
+              clearTimeout(imageSwapTimeout);
+              setCount(src - 1);
+            }}
             className="imageSwapper__imageSelect p-1 z-[10] border-white border-[1px] rounded-[50%] shadow-white hover:bg-white transition-all duration-500"
           >
             <div
