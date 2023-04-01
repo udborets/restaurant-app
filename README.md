@@ -54,7 +54,11 @@ Start the server
 
 - **think on site design**
 
-- **add navbar**
+- **add home page content**
+
+- **add about page**
+
+- **add ability to contact restaurant with email**
 
 - **add astro sitemap**
 
