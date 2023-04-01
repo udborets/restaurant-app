@@ -1,5 +1,5 @@
 ---
-import Header from "@/components/Header/Header.astro";
+import Header from "@/components/astro/Header/Header.astro";
 
 import "@/styles/global.scss";
 
@@ -22,7 +22,7 @@ const { title = "Restaurant App", description = "Welcome to Restaurant App" } =
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body class="items-center">
+  <body>
     <Header />
     <slot />
   </body>
