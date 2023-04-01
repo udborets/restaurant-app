@@ -5,11 +5,11 @@ import MainLayout from "@/layouts/MainLayout.astro";
 const title = "Welcome";
 const description = "Welcome to Restaurant App home page";
 
-const imageSwapperImagesNames = [1, 2, 3, 4, 5].sort(() => Math.random() - 0.5);
+const imageSwapperImagesNames = [1, 2, 3, 4, 5];
 ---
 
 <MainLayout title={title} description={description}>
-  <main class="bg-black w-full h-full">
+  <main class="w-full h-full">
     <ImageSwapper picturesNames={imageSwapperImagesNames} client:idle />
   </main>
 </MainLayout>
