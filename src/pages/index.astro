@@ -9,7 +9,7 @@ const imageSwapperImagesNames = [1, 2, 3, 4, 5].sort(() => Math.random() - 0.5);
 ---
 
 <MainLayout title={title} description={description}>
-  <main class="bg-black">
+  <main class="bg-black w-full h-full">
     <ImageSwapper picturesNames={imageSwapperImagesNames} client:idle />
   </main>
 </MainLayout>
