@@ -6,34 +6,34 @@
 
 ## Readme Navigation 🗺️
 
-- ## [Tech stack :computer:](#techstacklist)
+- ## [Tech stack :computer:](#techstacklink)
 
-<!-- - ## [Run locally :runner:](#runlocallylist) -->
+- ## [Run locally :runner:](#runlocallylink)
 
-- ## [Todo :clipboard:](#todolist)
+- ## [Todo :clipboard:](#todolink)
 
-- ## [Feedback :pray:](#feedbacklist)
+- ## [Feedback :pray:](#feedbacklink)
 
-<a id="techstacklist"></a>
+<a id="techstacklink"></a>
 
 ## Tech Stack :computer:
 
-**[Astro](https://astro.build/), [TailwindCSS](https://tailwindcss.com/), [SCSS](https://sass-lang.com/)**
+**[Astro](https://astro.build/), [TailwindCSS](https://tailwindcss.com/), [React](https://react.dev/), [SCSS](https://sass-lang.com/)**
 
-<!-- <a id="runlocallylist"></a>
+<a id="runlocallylink"></a>
 
 ## Run Locally :runner:
 
 Clone the project (make sure You have [Git](https://git-scm.com/) installed)
 
 ```bash
-  git clone https://github.com/udborets/portfolio.git
+  git clone https://github.com/udborets/restaurant-app.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd portfolio
+  cd restaurant-app
 ```
 
 Install dependencies (make sure You have [NodeJS](https://nodejs.org/en) installed)
@@ -46,9 +46,9 @@ Start the server
 
 ```bash
   npm run start
-``` -->
+```
 
-<a id="todolist"></a>
+<a id="todolink"></a>
 
 ## Todo :clipboard:
 
@@ -60,7 +60,7 @@ Start the server
 
 - **surely something else 🙃**
 
-<a id="feedbacklist"></a>
+<a id="feedbacklink"></a>
 
 ## Feedback :pray:
 
