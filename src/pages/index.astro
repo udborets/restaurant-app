@@ -1,12 +1,16 @@
 ---
+import ImageSwapper from "@/components/react/ImageSwapper/ImageSwapper";
 import MainLayout from "@/layouts/MainLayout.astro";
 
 const title = "Welcome";
 const description = "Welcome to Restaurant App home page";
+
+const imageSwapperImagesNames = [1, 2, 3, 4, 5];
 ---
 
 <MainLayout title={title} description={description}>
   <main>
+    <ImageSwapper picturesNames={imageSwapperImagesNames} client:idle />
   </main>
 </MainLayout>
 
