@@ -1,6 +1,5 @@
 ---
 import Header from "@/components/astro/Header/Header.astro";
-
 import "@/styles/global.scss";
 
 interface MainLayoutProps {
@@ -20,6 +19,12 @@ const { title = "Restaurant App", description = "Welcome to Restaurant App" } =
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
   <body>
