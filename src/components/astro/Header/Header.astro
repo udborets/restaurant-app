@@ -7,14 +7,14 @@ import { Icon } from "astro-icon";
   class="header absolute w-full h-[150px] p-4 z-[3] bg-opacity-80 bg-black"
 >
   <div class="header__container w-full h-full flex justify-around items-center">
-    <h1 class="header__title">
+    <h1 class="header__title md:flex hidden">
       <a
         href="/"
         class="header__homeLink text-[3rem] text-white font-bold"
         title="Go to home page">Punto Di Sapori</a
       >
     </h1>
-    <div class="socials flex gap-5">
+    <div class="socials md:flex gap-5 hidden">
       <a href="https://www.instagram.com/" title="Instagram">
         <Icon name="mdi:instagram" class="socials__link" />
       </a>
