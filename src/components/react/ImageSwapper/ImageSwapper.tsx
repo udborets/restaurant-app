@@ -25,7 +25,8 @@ const ImageSwapper = ({ picturesNames }: ImageSwapperProps) => {
         />
       ))}
       <div
-        className="imageSwapper__imageSelector flex flex-col w-fit gap-4 absolute self-center right-[10px] bg-opacity-100 md:bg-opacity-0 bg-black p-2 rounded-[10px]">
+        className="imageSwapper__imageSelector outline-white outline-2 outline-double md:outline-none flex flex-col w-fit gap-4 absolute self-center 
+        right-[10px] bg-opacity-100 md:bg-opacity-0 bg-black p-2 rounded-[10px]">
         {picturesNames.map((_, i) => (
           <div
             key={i}
