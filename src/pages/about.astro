@@ -1,8 +1,13 @@
 ---
-import MainLayout from "@/layouts/MainLayout.astro";
+import MainLayout, { MainLayoutProps } from "@/layouts/MainLayout.astro";
+
+const pageLayoutProps = {
+  title: "About us",
+  description: `Punto Di Sapori restaurant "About" page`,
+} as MainLayoutProps;
 ---
 
-<MainLayout>
+<MainLayout {...pageLayoutProps}>
   <main class="aboutPage">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nesciunt
     repellendus tempore minus accusantium. Illum inventore excepturi voluptates
