@@ -2,13 +2,17 @@
 import Header from "@/components/astro/Header/Header.astro";
 import "@/styles/global.scss";
 
-interface MainLayoutProps {
-  title: string;
-  description: string;
+export interface MainLayoutProps {
+  title?: string;
+  description?: string;
+  isHeaderAbsolute?: boolean;
 }
 
-const { title = "Restaurant App", description = "Welcome to Restaurant App" } =
-  Astro.props as MainLayoutProps;
+const {
+  title = "Restaurant App",
+  description = "Welcome to Restaurant App",
+  isHeaderAbsolute = false,
+} = Astro.props as MainLayoutProps;
 ---
 
 <!DOCTYPE html>
@@ -28,7 +32,7 @@ const { title = "Restaurant App", description = "Welcome to Restaurant App" } =
     <title>{title}</title>
   </head>
   <body>
-    <Header />
+    <Header isAbsolute={isHeaderAbsolute} />
     <slot />
   </body>
 </html>
