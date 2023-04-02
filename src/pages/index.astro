@@ -1,14 +1,17 @@
 ---
 import ImageSwapper from "@/components/react/ImageSwapper/ImageSwapper";
-import MainLayout from "@/layouts/MainLayout.astro";
+import MainLayout, { MainLayoutProps } from "@/layouts/MainLayout.astro";
 import imageSwapperImage1 from "@/assets/images/imageSwapper/1.jpg";
 import imageSwapperImage2 from "@/assets/images/imageSwapper/2.jpg";
 import imageSwapperImage3 from "@/assets/images/imageSwapper/3.jpg";
 import imageSwapperImage4 from "@/assets/images/imageSwapper/4.jpg";
 import imageSwapperImage5 from "@/assets/images/imageSwapper/5.jpg";
 
-const title = "Welcome";
-const description = "Welcome to Restaurant App home page";
+const pageLayoutProps = {
+  title: "Welcome",
+  description: `Punto Di Sapori "Home" page`,
+  isHeaderAbsolute: true,
+} as MainLayoutProps;
 
 const imageSwapperImagesNames = [
   imageSwapperImage1,
@@ -19,7 +22,7 @@ const imageSwapperImagesNames = [
 ].sort((_) => Math.random() - 0.5);
 ---
 
-<MainLayout title={title} description={description} isHeaderAbsolute={true}>
+<MainLayout {...pageLayoutProps}>
   <main class="homePage w-full h-full">
     <ImageSwapper picturesNames={imageSwapperImagesNames} client:idle />
   </main>
