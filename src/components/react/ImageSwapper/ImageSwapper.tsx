@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import LazyLoadImage from "react-lazy-load-image-component";
 
 interface ImageSwapperProps {
   picturesNames: string[];
@@ -17,7 +17,7 @@ const ImageSwapper = ({ picturesNames }: ImageSwapperProps) => {
   return (
     <div className={`imageSwapper overflow-hidden h-4/5 relative grid content-center bg-black`}>
       {picturesNames.map((src, i) => (
-        <LazyLoadImage
+        <LazyLoadImage.LazyLoadImage
           src={src}
           placeholderSrc={src}
           visibleByDefault
