@@ -9,13 +9,23 @@ import { Icon } from "astro-icon";
   <div
     class="header__container w-full h-full flex flex-col md:flex-row justify-around items-center"
   >
-    <h1 class="header__title">
+    <h1 class="navbarTitle">
       <a
         href="/"
-        class="header__homeLink text-[2rem] text-white font-bold md:text-[3rem]"
+        class="navbarTitle__link flex justify-center items-center gap-2"
         title="Go to home page"
       >
-        Punto Di Sapori
+        <img
+          src="/favicon.png"
+          loading="lazy"
+          alt="World Image"
+          class="navbarTitle__image flex w-[25px] md:w-[50px] h-[25px] md:h-[50px]"
+        />
+        <span
+          class="navbarTitle__text text-[1.5rem] text-white font-bold md:text-[3rem] text-center"
+        >
+          Punto Di Sapori
+        </span>
       </a>
     </h1>
     <div class="socials flex gap-5">
@@ -35,7 +45,7 @@ import { Icon } from "astro-icon";
 
 <style lang="scss">
   .header__title {
-    font-family: "Edu NSW ACT Foundation", cursive;
+    font-family: "Neucha", cursive;
   }
   .socials__link {
     @apply h-[25px] w-[25px] md:h-[40px] md:w-[40px];
