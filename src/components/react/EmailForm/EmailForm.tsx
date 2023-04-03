@@ -1,9 +1,19 @@
 import { useForm } from "react-hook-form"
+import { useState } from 'react';
+
+import EmailFormInput from "@/components/react/EmailFormInput/EmailFormInput";
 
 const EmailForm = () => {
-  const { register, formState: { errors }, handleSubmit } = useForm();
+  const isSent = useState<boolean>(false);
+  const { register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm({
+    mode: "onBlur",
+  });
   function onSubmit() {
-    console.log('haha')
+    reset();
   }
   return (
     <div className="emailForm">
@@ -11,14 +21,13 @@ const EmailForm = () => {
         action="emailForm__form"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <label htmlFor="firstName">
-          First name
-          <input type="sumbit" value={'haha'} name="firstName" />
-        </label>
-        <label htmlFor="lastName" className='flex flex-col'>
-          First name
-          <input type="sumbit" value={'haha'} name="lastName" />
-        </label>
+        <EmailFormInput
+          labelFor="firstName"
+          register={register}
+          error={errors}
+          text={'First name'}
+        />
+        <input type="submit" value="Send message!" />
       </form>
     </div>
   )
