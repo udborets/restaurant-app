@@ -1,13 +1,28 @@
 ---
 export interface homePagePostProps {
-  imageSide: "left" | "right";
+  imageSide?: "left" | "right";
   text: string;
+  imageSrc: string;
 }
-const { imageSide, text } = Astro.props as homePagePostProps;
+const { imageSide, text, imageSrc } = Astro.props as homePagePostProps;
 ---
 
 <div class="homePagePost flex w-full h-fit">
-  {imageSide === "left" ? <img src="" alt="" /> : ""}
-  <p>{text}</p>
-  {imageSide === "right" ? <img src="" alt="" /> : ""}
+  {
+    imageSide === "left" ? (
+      <img src={imageSrc} alt="Post image" class="homePagePost__image" />
+    ) : (
+      ""
+    )
+  }
+  <p class="homePagePost__text">
+    {text}
+  </p>
+  {
+    imageSide === "right" ? (
+      <img src={imageSrc} alt="Post image" class="homePagePost__image" />
+    ) : (
+      ""
+    )
+  }
 </div>
