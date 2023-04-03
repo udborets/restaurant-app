@@ -26,9 +26,9 @@ const imageSwapperImagesNames = [
 <MainLayout {...pageLayoutProps}>
   <main class="homePage w-full h-full">
     <ImageSwapper picturesNames={imageSwapperImagesNames} client:load />
-    <HomePagePost text={"hahaha"} imageSide="left"/>
-    <HomePagePost text={"hahaha"} imageSide="left"/>
-    <HomePagePost text={"hahaha"} imageSide="left"/>
+    <HomePagePost text={"hahaha"} isImgRight={true} title="haha" />
+    <HomePagePost text={"hahaha"} isImgLeft={true} title="haha" />
+    <HomePagePost text={"hahaha"} isImgLeft={true} title="haha" />
   </main>
 </MainLayout>
 
