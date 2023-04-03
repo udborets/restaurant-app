@@ -1,5 +1,6 @@
 ---
 import Header from "@/components/astro/Header/Header.astro";
+import type { NavbarLinkProps } from "@/components/astro/NavbarLink/NavbarLink.astro";
 import "@/styles/global.scss";
 
 export interface MainLayoutProps {
@@ -13,6 +14,21 @@ const {
   description = "Welcome to Restaurant App",
   isHeaderAbsolute = false,
 } = Astro.props as MainLayoutProps;
+
+const navbarLinks = [
+  {
+    href: "/",
+    text: "Home",
+  },
+  {
+    href: "/about",
+    text: "About",
+  },
+  {
+    href: "/contact-us",
+    text: "Contact us",
+  },
+] as NavbarLinkProps[];
 ---
 
 <!DOCTYPE html>
@@ -26,7 +42,7 @@ const {
     <title>{title}</title>
   </head>
   <body>
-    <Header isAbsolute={isHeaderAbsolute} />
+    <Header isAbsolute={isHeaderAbsolute} navbarLinks={navbarLinks} />
     <slot />
   </body>
 </html>
