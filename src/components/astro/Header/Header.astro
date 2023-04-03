@@ -1,12 +1,15 @@
 ---
-import Navbar from "@/components/astro/Navbar/Navbar.astro";
 import { Icon } from "astro-icon";
+
+import Navbar from "@/components/astro/Navbar/Navbar.astro";
+import type { NavbarLinkProps } from "@/components/astro/NavbarLink/NavbarLink.astro";
 
 export interface HeaderProps {
   isAbsolute?: boolean;
+  navbarLinks: NavbarLinkProps[];
 }
 
-const { isAbsolute = false } = Astro.props as HeaderProps;
+const { isAbsolute = false, navbarLinks } = Astro.props as HeaderProps;
 ---
 
 <header
@@ -47,7 +50,7 @@ const { isAbsolute = false } = Astro.props as HeaderProps;
         <Icon name="mdi:twitter" class="socials__link" />
       </a>
     </div>
-    <Navbar />
+    <Navbar links={navbarLinks} />
   </div>
 </header>
 
