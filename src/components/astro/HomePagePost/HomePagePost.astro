@@ -17,7 +17,7 @@ const {
 
 <div class="homePagePost w-full h-fit p-2 flex justify-center">
   <div
-    class="homePagePost__container w-[80%] h-full flex gap-10 justify-center"
+    class="homePagePost__container w-[80%] h-full sm:flex flex-col gap-10 justify-center"
   >
     {
       isImgLeft ? (
@@ -60,8 +60,6 @@ const {
 
 <style lang="css">
   .homePagePost__image {
-    width: 500px;
-    height: auto;
-    object-fit: cover;
+    @apply w-fit h-auto object-cover sm:w-[500px];
   }
 </style>
