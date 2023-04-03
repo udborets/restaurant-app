@@ -1,5 +1,5 @@
 ---
-import EmailForm from "@/components/react/EmailForm/EmailForm";
+import ContactUsForm from "@/components/react/ContactUsForm/ContactUsForm";
 import MainLayout, { MainLayoutProps } from "@/layouts/MainLayout.astro";
 
 const pageLayoutProps = {
@@ -11,6 +11,6 @@ const pageLayoutProps = {
 
 <MainLayout {...pageLayoutProps}>
   <main class="contactUsPage grid content-center">
-    <EmailForm client:load/>
+    <ContactUsForm client:load/>
   </main>
 </MainLayout>
