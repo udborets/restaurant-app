@@ -1,7 +1,13 @@
 ---
-
+export interface homePagePostProps {
+  imageSide: "left" | "right";
+  postText: string;
+}
+const { imageSide, postText } = Astro.props as homePagePostProps;
 ---
 
-<div>
-  
+<div class="homePagePost flex w-full h-fit">
+  {imageSide === "left" ? <img src="" alt="" /> : ""}
+  <p>{postText}</p>
+  {imageSide === "right" ? <img src="" alt="" /> : ""}
 </div>
