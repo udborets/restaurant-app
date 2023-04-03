@@ -1,13 +1,13 @@
 import type { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 
-interface EmailFormInputProps {
+interface ContactUsFormInputProps {
   labelFor: string;
   register: UseFormRegister<FieldValues>;
   error: FieldErrors<FieldValues>;
   text: string;
 }
 
-const EmailFormInput = ({ labelFor, register, error, text }: EmailFormInputProps) => {
+const ContactUsFormInput = ({ labelFor, register, error, text }: ContactUsFormInputProps) => {
   return (
     <label htmlFor={labelFor} className='flex flex-col'>
       <span>{text}</span>
@@ -24,4 +24,4 @@ const EmailFormInput = ({ labelFor, register, error, text }: EmailFormInputProps
   )
 }
 
-export default EmailFormInput
+export default ContactUsFormInput
