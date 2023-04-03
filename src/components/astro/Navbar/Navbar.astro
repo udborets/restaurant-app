@@ -2,26 +2,17 @@
 import type { NavbarLinkProps } from "@/components/astro/NavbarLink/NavbarLink.astro";
 import NavbarLink from "@/components/astro/NavbarLink/NavbarLink.astro";
 
-const navbarLinks = [
-  {
-    href: "/",
-    text: "Home",
-  },
-  {
-    href: "/about",
-    text: "About",
-  },
-  {
-    href: "/contact-us",
-    text: "Contact us",
-  },
-] as NavbarLinkProps[];
+interface NavbarProps {
+  links: NavbarLinkProps[];
+}
+
+const { links } = Astro.props as NavbarProps;
 ---
 
 <nav class="navbar flex w-fit h-fit flex-col">
   <ul class="navbar__links flex w-fit h-fit">
     {
-      navbarLinks.map((link) => (
+      links.map((link) => (
         <li class="navbar__link flex">
           <NavbarLink href={link.href} text={link.text} />
         </li>
