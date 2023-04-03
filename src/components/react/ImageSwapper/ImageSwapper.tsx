@@ -14,7 +14,7 @@ const ImageSwapper = ({ picturesNames }: ImageSwapperProps) => {
     setCurrentImgIndex((prevCurrentImgIndex) => prevCurrentImgIndex + 1);
   }, 5000)
   return (
-    <div className={`imageSwapper overflow-hidden h-4/5 relative grid content-center bg-black`}>
+    <div className={`imageSwapper overflow-hidden h-[500px] lg:h-[600px] relative grid content-center bg-black`}>
       {picturesNames.map((src, i) => (
         <img
           src={src}
