@@ -1,6 +1,7 @@
 ---
 import ImageSwapper from "@/components/react/ImageSwapper/ImageSwapper";
 import MainLayout, { MainLayoutProps } from "@/layouts/MainLayout.astro";
+import HomePagePost from "@/components/astro/HomePagePost/HomePagePost.astro";
 import imageSwapperImage1 from "@/assets/images/imageSwapper/1.jpg";
 import imageSwapperImage2 from "@/assets/images/imageSwapper/2.jpg";
 import imageSwapperImage3 from "@/assets/images/imageSwapper/3.jpg";
@@ -25,6 +26,9 @@ const imageSwapperImagesNames = [
 <MainLayout {...pageLayoutProps}>
   <main class="homePage w-full h-full">
     <ImageSwapper picturesNames={imageSwapperImagesNames} client:load />
+    <HomePagePost text={"hahaha"} imageSide="left"/>
+    <HomePagePost text={"hahaha"} imageSide="left"/>
+    <HomePagePost text={"hahaha"} imageSide="left"/>
   </main>
 </MainLayout>
 
