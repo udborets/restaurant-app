@@ -15,8 +15,10 @@ const {
 } = Astro.props as homePagePostProps;
 ---
 
-<div class="homePagePost w-full h-fit p-2">
-  <div class="homePagePost__container w-full h-full flex justify-around">
+<div class="homePagePost w-full h-fit p-2 flex justify-center">
+  <div
+    class="homePagePost__container w-[80%] h-full flex gap-10 justify-center"
+  >
     {
       isImgLeft ? (
         <img src={imageSrc} alt="Post image" class="homePagePost__image" />
@@ -27,12 +29,22 @@ const {
     <div class="homePagePost__textBlock flex flex-col gap-4">
       {
         title ? (
-          <h4 class={`homePagePost__title font-bold text-[2.7rem]${isImgLeft ? " text-right" : ""}`}>{title}</h4>
+          <h4
+            class={`homePagePost__title font-bold text-[2.7rem] ${
+              isImgLeft ? "text-right mr-10" : "text-left ml-10"
+            }`}
+          >
+            {title}
+          </h4>
         ) : (
           ""
         )
       }
-      <p class="homePagePost__text">
+      <p
+        class={`homePagePost__text text-[1.5rem] ${
+          isImgLeft ? "text-right" : "text-left"
+        }`}
+      >
         {text}
       </p>
     </div>
