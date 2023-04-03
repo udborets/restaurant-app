@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form"
 import { useState } from 'react';
 
-import EmailFormInput from "@/components/react/EmailFormInput/EmailFormInput";
+import ContactUsFormInput from "@/components/react/ContactUsFormInput/ContactUsFormInput";
 
-const EmailForm = () => {
+const ContactUsForm = () => {
   const isSent = useState<boolean>(false);
   const { register,
     formState: { errors },
@@ -16,12 +16,12 @@ const EmailForm = () => {
     reset();
   }
   return (
-    <div className="emailForm">
+    <div className="contactUsForm">
       <form
-        action="emailForm__form"
+        action="contactUsForm__form"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <EmailFormInput
+        <ContactUsFormInput
           labelFor="firstName"
           register={register}
           error={errors}
@@ -33,4 +33,4 @@ const EmailForm = () => {
   )
 }
 
-export default EmailForm
+export default ContactUsForm
