@@ -1,5 +1,5 @@
 ---
-export interface homePagePostProps {
+export interface HomePagePostProps {
   isImgLeft?: boolean;
   isImgRight?: boolean;
   text: string;
@@ -12,7 +12,7 @@ const {
   text = "",
   imageSrc,
   title,
-} = Astro.props as homePagePostProps;
+} = Astro.props as HomePagePostProps;
 ---
 
 <div class="homePagePost w-full h-fit p-2 flex justify-center">
