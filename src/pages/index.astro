@@ -27,9 +27,9 @@ const imageSwapperImagesNames = [
 ---
 
 <MainLayout {...pageLayoutProps}>
-  <main class="homePage w-full h-full">
+  <main class="homePage w-fit h-fit flex flex-col flex-grow">
     <ImageSwapper picturesNames={imageSwapperImagesNames} client:load />
-    <div class="homePage__content p-4">
+    <div class="homePage__content w-full h-full p-4">
       <div class="homePage__posts flex flex-col gap-10">
         <HomePagePost
           text={testText}
@@ -53,3 +53,13 @@ const imageSwapperImagesNames = [
     </div>
   </main>
 </MainLayout>
+
+<style>
+  body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+  }
+</style>
