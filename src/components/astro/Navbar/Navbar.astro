@@ -9,8 +9,8 @@ interface NavbarProps {
 const { links } = Astro.props as NavbarProps;
 ---
 
-<nav class="navbar flex w-fit h-fit flex-col">
-  <ul class="navbar__links flex w-fit h-fit">
+<nav class="navbar w-fit h-fit">
+  <ul class="navbar__links flex flex-col w-fit h-fit">
     {
       links.map((link) => (
         <li class="navbar__link flex">
@@ -20,3 +20,11 @@ const { links } = Astro.props as NavbarProps;
     }
   </ul>
 </nav>
+
+<style>
+  @media (min-width: 250px) {
+    .navbar__links {
+      flex-direction: row;
+    }
+  }
+</style>
