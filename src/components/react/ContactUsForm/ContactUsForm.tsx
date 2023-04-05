@@ -16,7 +16,7 @@ const ContactUsForm = () => {
     reset();
   }
   return (
-    <div className="contactUsForm w-[300px]">
+    <div className="contactUsForm w-full sm:w-[500px]">
       <form
         action="submit"
         className="contactUsForm__form p-2 w-full h-full flex flex-col gap-2"
