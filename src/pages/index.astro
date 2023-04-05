@@ -1,7 +1,9 @@
 ---
 import ImageSwapper from "@/components/react/ImageSwapper/ImageSwapper";
 import MainLayout, { MainLayoutProps } from "@/layouts/MainLayout.astro";
-import HomePagePost from "@/components/astro/HomePagePost/HomePagePost.astro";
+import HomePagePost, {
+  HomePagePostProps,
+} from "@/components/astro/HomePagePost/HomePagePost.astro";
 import imageSwapperImage1 from "@/assets/images/imageSwapper/1.jpg";
 import imageSwapperImage2 from "@/assets/images/imageSwapper/2.jpg";
 import imageSwapperImage3 from "@/assets/images/imageSwapper/3.jpg";
@@ -24,6 +26,30 @@ const imageSwapperImagesNames = [
   imageSwapperImage4,
   imageSwapperImage5,
 ].sort((_) => Math.random() - 0.5);
+
+const postsProps = [
+  {
+    text: testText,
+    isImgRight: true,
+    title: "haha",
+    imageSrc:
+      "https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591",
+  },
+  {
+    text: testText,
+    isImgLeft: true,
+    title: "haha",
+    imageSrc:
+      "https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591",
+  },
+  {
+    text: testText,
+    isImgRight: true,
+    title: "haha",
+    imageSrc:
+      "https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591",
+  },
+] as HomePagePostProps[];
 ---
 
 <MainLayout {...pageLayoutProps}>
@@ -31,24 +57,7 @@ const imageSwapperImagesNames = [
     <ImageSwapper picturesNames={imageSwapperImagesNames} client:load />
     <div class="homePage__content w-full h-full p-4">
       <div class="homePage__posts flex flex-col gap-10">
-        <HomePagePost
-          text={testText}
-          isImgRight
-          title="haha"
-          imageSrc={"https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591"}
-        />
-        <HomePagePost
-          text={testText}
-          isImgLeft
-          title="haha"
-          imageSrc={"https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591"}
-        />
-        <HomePagePost
-          text={testText}
-          isImgRight
-          title="haha"
-          imageSrc={"https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591"}
-        />
+        {postsProps.map((postProps) => <HomePagePost {...postProps} />)}
       </div>
     </div>
   </main>
