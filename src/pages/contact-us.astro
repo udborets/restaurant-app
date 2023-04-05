@@ -10,7 +10,14 @@ const pageLayoutProps = {
 ---
 
 <MainLayout {...pageLayoutProps}>
-  <main class="contactUsPage flex flex-col justify-center items-center p-2">
+  <main class="contactUsPage flex flex-col flex-grow justify-center items-center p-2">
     <ContactUsForm client:load/>
   </main>
 </MainLayout>
+
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
