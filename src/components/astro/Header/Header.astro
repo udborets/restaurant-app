@@ -20,7 +20,7 @@ const { isAbsolute = false, navbarLinks } = Astro.props as HeaderProps;
   <div
     class="header__container w-full h-full flex flex-col md:flex-row justify-around items-center"
   >
-    <h1 class="navbarTitle">
+    <h1 class="navbarTitle hidden">
       <a
         href="/"
         class="navbarTitle__link flex justify-center items-center gap-2"
@@ -39,7 +39,7 @@ const { isAbsolute = false, navbarLinks } = Astro.props as HeaderProps;
         </span>
       </a>
     </h1>
-    <div class="socials flex gap-5">
+    <div class="socials hidden gap-5">
       <a href="https://www.instagram.com/" title="Instagram">
         <Icon name="mdi:instagram" class="socials__link" />
       </a>
@@ -55,6 +55,14 @@ const { isAbsolute = false, navbarLinks } = Astro.props as HeaderProps;
 </header>
 
 <style lang="scss">
+  @media (min-width: 250px) {
+    .socials {
+      display: flex
+    }
+    .navbarTitle {
+      display: flex;
+    }
+  }
   .navbarTitle__text {
     font-family: "Montserrat", sans-serif;
   }
