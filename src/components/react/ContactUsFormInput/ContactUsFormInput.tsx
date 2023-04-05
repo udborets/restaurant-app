@@ -5,9 +5,10 @@ interface ContactUsFormInputProps {
   register: UseFormRegister<FieldValues>;
   error: FieldErrors<FieldValues>;
   text: string;
+  isRequiredText?: string;
 }
 
-const ContactUsFormInput = ({ labelFor, register, error, text }: ContactUsFormInputProps) => {
+const ContactUsFormInput = ({ labelFor, register, error, text, isRequiredText }: ContactUsFormInputProps) => {
   return (
     <label htmlFor={labelFor} className='flex flex-col w-full h-[90px]'>
       <span
@@ -17,7 +18,7 @@ const ContactUsFormInput = ({ labelFor, register, error, text }: ContactUsFormIn
       </span>
       <input
         {...register(labelFor, {
-          required: "This field can't be empty"
+          required: isRequiredText ?? false
         })}
         name={labelFor}
         className={`outline outline-1 focus:outline-2 focus:outline-black focus:shadow-sm w-full h-1/3 py-1 px-2`}
