@@ -9,7 +9,7 @@ interface ContactUsFormInputProps {
 
 const ContactUsFormInput = ({ labelFor, register, error, text }: ContactUsFormInputProps) => {
   return (
-    <label htmlFor={labelFor} className='flex flex-col w-[200px] h-[90px]'>
+    <label htmlFor={labelFor} className='flex flex-col w-full h-[90px]'>
       <span
         className="w-full text-left h-1/3"
       >
