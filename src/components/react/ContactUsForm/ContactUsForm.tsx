@@ -4,7 +4,6 @@ import { useState } from 'react';
 import ContactUsFormInput from "@/components/react/ContactUsFormInput/ContactUsFormInput";
 
 const ContactUsForm = () => {
-  const isSent = useState<boolean>(false);
   const { register,
     formState: { errors },
     handleSubmit,
@@ -17,10 +16,10 @@ const ContactUsForm = () => {
     reset();
   }
   return (
-    <div className="contactUsForm w-fit">
+    <div className="contactUsForm w-[300px]">
       <form
         action="submit"
-        className="contactUsForm__form p-2"
+        className="contactUsForm__form p-2 w-full h-full flex flex-col gap-2"
         onSubmit={handleSubmit(onSubmit)}
       >
         <ContactUsFormInput
@@ -40,6 +39,12 @@ const ContactUsForm = () => {
           register={register}
           error={errors}
           text={'Email'}
+        />
+        <textarea
+          className={'outline outline-1 focus:outline-2 focus:outline-black min-h-[100px] max-h-[200px] w-full'}
+          {...register('messageText', {
+            required: true,
+          })}
         />
         <button type="submit">
           Send message!
