@@ -12,13 +12,15 @@ const ContactUsForm = () => {
   } = useForm({
     mode: "onBlur",
   });
-  function onSubmit() {
+  function onSubmit(e: any) {
+    console.log(e)
     reset();
   }
   return (
-    <div className="contactUsForm">
+    <div className="contactUsForm w-fit">
       <form
-        action="contactUsForm__form"
+        action="submit"
+        className="contactUsForm__form p-2"
         onSubmit={handleSubmit(onSubmit)}
       >
         <ContactUsFormInput
@@ -27,7 +29,21 @@ const ContactUsForm = () => {
           error={errors}
           text={'First name'}
         />
-        <input type="submit" value="Send message!" />
+        <ContactUsFormInput
+          labelFor="secondName"
+          register={register}
+          error={errors}
+          text={'Second name'}
+        />
+        <ContactUsFormInput
+          labelFor="email"
+          register={register}
+          error={errors}
+          text={'Email'}
+        />
+        <button type="submit">
+          Send message!
+        </button>
       </form>
     </div>
   )
