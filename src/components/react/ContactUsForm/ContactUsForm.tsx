@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import ContactUsFormInput from "@/components/react/ContactUsFormInput/ContactUsFormInput";
 
 export interface ContactUsFormProps {
-  inputsProps: { text: string, labelFor: string }[];
+  inputsProps: { text: string, labelFor: string, requiredText?: string }[];
 }
 
 const ContactUsForm = ({ inputsProps }: ContactUsFormProps) => {
@@ -31,9 +31,10 @@ const ContactUsForm = ({ inputsProps }: ContactUsFormProps) => {
         <textarea
           className={'outline outline-1 focus:outline-2 focus:outline-black min-h-[100px] max-h-[200px] w-full'}
           {...register('messageText', {
-            required: true,
+            required: 'This field cannot be empty',
           })}
         />
+        {errors?.messageText?.message?.toString()}
         <button type="submit">
           Send message!
         </button>
