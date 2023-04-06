@@ -1,6 +1,6 @@
 import type { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 
-interface ContactUsFormInputProps {
+export interface ContactUsFormInputProps {
   labelFor: string;
   register: UseFormRegister<FieldValues>;
   error: FieldErrors<FieldValues>;

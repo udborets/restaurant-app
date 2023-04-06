@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-interface ImageSwapperProps {
+export interface ImageSwapperProps {
   picturesNames: string[];
 }
 
