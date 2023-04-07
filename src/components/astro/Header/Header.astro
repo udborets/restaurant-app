@@ -1,11 +1,30 @@
 ---
 import Navbar from "@/components/astro/Navbar/Navbar.astro";
 import type { NavbarLinkProps } from "@/components/astro/NavbarLink/NavbarLink.astro";
+import type { SocialLinkProps } from "@/components/astro/SocialLink/SocialLink.astro";
+import SocialLink from "@/components/astro/SocialLink/SocialLink.astro";
 
 export interface HeaderProps {
   isAbsolute?: boolean;
   navbarLinks: NavbarLinkProps[];
 }
+const socialLinksProps: SocialLinkProps[] = [
+  {
+    href: "https://www.facebook.com/",
+    iconName: "ic:baseline-facebook",
+    titleText: "Facebook",
+  },
+  {
+    href: "https://www.instagram.com/",
+    iconName: "mdi:instagram",
+    titleText: "Instagram",
+  },
+  {
+    href: "https://twitter.com/",
+    iconName: "mdi:twitter",
+    titleText: "Twitter",
+  },
+];
 
 const { isAbsolute = false, navbarLinks } = Astro.props as HeaderProps;
 ---
@@ -37,9 +56,15 @@ const { isAbsolute = false, navbarLinks } = Astro.props as HeaderProps;
         </span>
       </a>
     </h1>
-    <div class="socialLink hidden gap-5">
-
-    </div>
+    <ul class="socials hidden gap-5">
+      {
+        socialLinksProps.map((linkProps) => (
+          <li class="socials__link">
+            <SocialLink {...linkProps} />
+          </li>
+        ))
+      }
+    </ul>
     <Navbar links={navbarLinks} />
   </div>
 </header>
@@ -55,14 +80,5 @@ const { isAbsolute = false, navbarLinks } = Astro.props as HeaderProps;
   }
   .navbarTitle__text {
     font-family: "Montserrat", sans-serif;
-  }
-  .socials__link {
-    @apply h-[25px] w-[25px] md:h-[40px] md:w-[40px];
-    color: white;
-    opacity: 0.5;
-    transition: all 0.3s ease-out;
-    &:hover {
-      opacity: 1;
-    }
   }
 </style>
