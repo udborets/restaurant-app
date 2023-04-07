@@ -1,3 +1,27 @@
 ---
+import { Icon } from "astro-icon";
 
+export interface SocialLinkProps {
+  iconName: string;
+  href: string;
+  titleText: string;
+}
+
+const { iconName, href, titleText } = Astro.props as SocialLinkProps;
 ---
+
+<a href={href} class="socialLink__link w-fit h-fit" title={titleText}>
+  <Icon name={iconName} class="socialLink__icon" />
+</a>
+
+<style>
+  .socialLink__icon {
+    @apply h-[25px] w-[25px] md:h-[40px] md:w-[40px];
+    color: white;
+    opacity: 0.5;
+    transition: all 0.3s ease-out;
+    &:hover {
+      opacity: 1;
+    }
+  }
+</style>
