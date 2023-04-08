@@ -12,7 +12,7 @@ const ContactUsFormInput = ({ labelFor, register, error, text, isRequiredText }:
   return (
     <label htmlFor={labelFor} className='flex flex-col w-full h-[90px]'>
       <span
-        className="w-full text-left h-1/3"
+        className="w-full text-left h-1/3 text-white"
       >
         {text}
       </span>
@@ -21,7 +21,7 @@ const ContactUsFormInput = ({ labelFor, register, error, text, isRequiredText }:
           required: isRequiredText ?? false
         })}
         name={labelFor}
-        className={`outline outline-1 focus:outline-2 focus:outline-black focus:shadow-sm w-full h-1/3 py-1 px-2`}
+        className={`focus:outline rounded-[8px] focus:outline-2 text-black bg-slate-200 focus:bg-white outline-white outline-offset-2 w-full h-1/3 py-1 px-2`}
       />
       {error[labelFor]?.message
         ? <div
