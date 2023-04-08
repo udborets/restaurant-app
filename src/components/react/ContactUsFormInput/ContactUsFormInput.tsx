@@ -11,9 +11,9 @@ export interface ContactUsFormInputProps {
 
 const ContactUsFormInput = ({ labelFor, register, error, text, isRequiredText }: ContactUsFormInputProps) => {
   return (
-    <label htmlFor={labelFor} className='contactUsFromInput flex flex-col w-full h-[90px]'>
+    <label htmlFor={labelFor} className='contactUsFromInput flex flex-col w-full gap-2 h-fit'>
       <span
-        className={`contactUsFormInput__fieldName relative text-xl ${isRequiredText ? styles.required : ""} w-full text-left h-1/3 text-white`}
+        className={`contactUsFormInput__fieldName relative text-[1.5rem] ${isRequiredText ? styles.required : ""} w-full text-left h-fit text-white`}
       >
         {text}
       </span>
@@ -22,16 +22,14 @@ const ContactUsFormInput = ({ labelFor, register, error, text, isRequiredText }:
           required: isRequiredText ?? false
         })}
         name={labelFor}
-        className={`contactUsFormInput__input focus:outline rounded-[8px] focus:outline-2 
-        bg-slate-200 focus:bg-white outline-white outline-offset-2 w-full h-1/3 py-1 px-2`}
+        className={`contactUsFormInput__input focus:outline rounded-[8px] focus:outline-2 text-[1.2rem]
+        bg-slate-200 focus:bg-white outline-white outline-offset-2 w-full py-1 px-2 min-h-[1rem]`}
       />
-      {error[labelFor]?.message
-        ? <div
-          className='contactUsFormInput__errorMessage h-1/3 text-red-500 w-full grid content-center'
-        >
-          {error[labelFor]?.message?.toString()}
-        </div>
-        : ""}
+      <div
+        className='contactUsFormInput__errorMessage min-h-[1.5rem] text-red-500 w-full grid content-center'
+      >
+        {error[labelFor]?.message?.toString()}
+      </div>
     </label>
   )
 }
