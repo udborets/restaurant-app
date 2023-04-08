@@ -20,7 +20,7 @@ const ImageSwapper = ({ picturesNames }: ImageSwapperProps) => {
           src={src}
           alt="pic"
           loading="lazy"
-          key={Math.random()}
+          key={index}
           className={`imageSwapper__img z-[0] object-cover w-full h-full absolute top-0 right-0 ${currentImgIndex === index ? 'opacity-100' : 'opacity-0'} duration-[1.3s] transition-all `}
         />
       ))}
@@ -29,7 +29,7 @@ const ImageSwapper = ({ picturesNames }: ImageSwapperProps) => {
         right-[10px] bg-opacity-100 md:bg-opacity-0 bg-black p-2 rounded-[10px]">
         {picturesNames.map((_, index) => (
           <div
-            key={Math.random()}
+            key={index}
             onClick={() => {
               clearTimeout(imageSwapTimeout);
               setCurrentImgIndex(index);
