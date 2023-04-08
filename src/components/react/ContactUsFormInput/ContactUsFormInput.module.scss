@@ -1,0 +1,10 @@
+.required {
+  &::before {
+    content: "*";
+    color: red;
+    font-size: 1.5rem;
+    position: absolute;
+    left: -1rem;
+    top: 0;
+  }
+}
