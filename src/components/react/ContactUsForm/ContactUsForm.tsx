@@ -19,7 +19,7 @@ const ContactUsForm = ({ inputsProps }: ContactUsFormProps) => {
     reset();
   }
   return (
-    <div className="contactUsForm w-full sm:w-[500px] bg-black py-8 px-6">
+    <div className="contactUsForm w-full sm:w-[500px] bg-black py-8 px-6 rounded-[15px]">
       <form
         action="submit"
         className="contactUsForm__form p-2 w-full h-full flex flex-col gap-2"
@@ -28,19 +28,9 @@ const ContactUsForm = ({ inputsProps }: ContactUsFormProps) => {
         {inputsProps.map((inputProps) => (
           <ContactUsFormInput {...inputProps} error={errors} register={register} key={inputProps.labelFor} />
         ))}
-        <textarea
-          className={'contactUsForm__messageInput outline outline-1 focus:outline-2 focus:outline-white text-black min-h-[100px] max-h-[200px] w-full'}
-          {...register('messageText', {
-            required: 'This field cannot be empty',
-          })}
-        />
-        <span className="contactUsForm__messageError text-red-600">
-
-          {errors?.messageText?.message?.toString()}
-        </span>
         <button
           type="submit"
-          className="contactUsForm__sendButton text-white"
+          className="contactUsForm__sendButton text-white px-4 py-3 bg-black outline-white outline outline-2 rounded-[8px] hover:bg-gray-900 transition-all duration-[.2s] ease-out"
         >
           Send message!
         </button>
