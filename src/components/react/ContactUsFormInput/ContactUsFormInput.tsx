@@ -7,9 +7,10 @@ export interface ContactUsFormInputProps {
   error: FieldErrors<FieldValues>;
   text: string;
   isRequiredText?: string;
+  Tag: "textarea" | "input";
 }
 
-const ContactUsFormInput = ({ labelFor, register, error, text, isRequiredText }: ContactUsFormInputProps) => {
+const ContactUsFormInput = ({ labelFor, register, error, text, isRequiredText, Tag }: ContactUsFormInputProps) => {
   return (
     <label htmlFor={labelFor} className='contactUsFromInput flex flex-col w-full gap-2 h-fit'>
       <span
@@ -17,13 +18,13 @@ const ContactUsFormInput = ({ labelFor, register, error, text, isRequiredText }:
       >
         {text}
       </span>
-      <input
+      <Tag
         {...register(labelFor, {
           required: isRequiredText ?? false
         })}
         name={labelFor}
-        className={`contactUsFormInput__input focus:outline rounded-[8px] focus:outline-2 text-[1rem] sm:text-[1.2rem]
-        bg-slate-200 focus:bg-white outline-white outline-offset-2 w-full py-1 px-2 min-h-[1rem]`}
+        className={`contactUsFormInput__input focus:outline rounded-[8px] focus:outline-2 text-[1rem] sm:text-[1.2rem] max-h-[150px]
+        bg-slate-200 focus:bg-white outline-white outline-offset-2 w-full py-1 px-2 min-h-[50px]`}
       />
       <div
         className='contactUsFormInput__errorMessage min-h-[1.65rem] text-[1rem] sm:text-[1.1rem] text-red-500 w-full grid content-center'
