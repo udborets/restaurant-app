@@ -3,7 +3,12 @@ import { useForm } from "react-hook-form"
 import ContactUsFormInput from "@/components/react/ContactUsFormInput/ContactUsFormInput";
 
 export interface ContactUsFormProps {
-  inputsProps: { text: string, labelFor: string, isRequiredText?: string }[];
+  inputsProps: {
+    text: string;
+    labelFor: string;
+    isRequiredText?: string;
+    Tag: "textarea" | "input";
+  }[];
 }
 
 const ContactUsForm = ({ inputsProps }: ContactUsFormProps) => {
