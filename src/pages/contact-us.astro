@@ -15,16 +15,25 @@ const contactUsFormProps = {
     {
       text: "First name",
       labelFor: "firstName",
-      isRequiredText: "This field cannot be empty",
+      isRequiredText: "First name cannot be empty",
+      Tag: "input",
     },
     {
       text: "Second name",
       labelFor: "secondName",
+      Tag: "input",
     },
     {
       text: "Email",
       labelFor: "email",
-      isRequiredText: "This field cannot be empty",
+      isRequiredText: "Email cannot be empty",
+      Tag: "input",
+    },
+    {
+      text: "Message",
+      labelFor: "message",
+      isRequiredText: "Message cannot be empty",
+      Tag: "textarea",
     },
   ],
 } as ContactUsFormProps;
