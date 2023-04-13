@@ -17,7 +17,9 @@ const {
 
 <div class="homePagePost w-full h-fit p-2 flex justify-center">
   <div
-    class="homePagePost__container w-[80%] h-full flex flex-col lg:flex-row gap-10 justify-center"
+    class={`homePagePost__container w-[80%] h-full flex ${
+      isImgLeft ? "flex-col-reverse sm:flex-col" : "flex-col"
+    } lg:flex-row gap-10 justify-center items-center`}
   >
     {
       isImgLeft ? (
@@ -26,12 +28,12 @@ const {
         ""
       )
     }
-    <div class="homePagePost__textBlock flex flex-col gap-4">
+    <div class="homePagePost__textBlock flex lg:w-3/5 flex-col gap-4">
       {
         title ? (
           <h4
             class={`homePagePost__title font-bold text-[2.7rem] ${
-              isImgLeft ? "text-right mr-10" : "text-left ml-10"
+              isImgLeft ? "text-left mr-10" : "text-right ml-10"
             }`}
           >
             {title}
@@ -42,7 +44,7 @@ const {
       }
       <p
         class={`homePagePost__text text-[1.5rem] ${
-          isImgLeft ? "text-right" : "text-left"
+          isImgLeft ? "text-left" : "text-right"
         }`}
       >
         {text}
