@@ -29,23 +29,30 @@ const imageSwapperImagesNames = [
 
 const postsProps = [
   {
-    text: testText,
+    text: "Our Italian restaurant is a dream come true for lovers of authentic Italian cuisine",
     isImgRight: true,
-    title: "haha",
+    title: "Italian food",
     imageSrc:
       "https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591",
   },
   {
-    text: testText,
+    text: "At our restaurant, you'll be transported to the streets of Rome with every bite of our handmade pasta and wood-fired pizza",
     isImgLeft: true,
-    title: "haha",
+    title: "Get ready for the trip",
     imageSrc:
       "https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591",
   },
   {
-    text: testText,
+    text: "Our menu is carefully crafted with the freshest ingredients and traditional Italian recipes passed down through generations",
     isImgRight: true,
-    title: "haha",
+    title: "Menu",
+    imageSrc:
+      "https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591",
+  },
+  {
+    text: "From the cozy atmosphere to the warm and friendly service, our Italian restaurant is the perfect place to enjoy a taste of Italy",
+    isImgLeft: true,
+    title: "Service",
     imageSrc:
       "https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591",
   },
@@ -53,7 +60,7 @@ const postsProps = [
 ---
 
 <MainLayout {...pageLayoutProps}>
-  <main class="homePage w-fit h-fit flex flex-col flex-grow">
+  <main class="homePage w-full h-fit flex flex-col flex-grow">
     <ImageSwapper picturesNames={imageSwapperImagesNames} client:load />
     <div class="homePage__content w-full h-full p-4">
       <div class="homePage__posts flex flex-col gap-10">
@@ -64,11 +71,12 @@ const postsProps = [
 </MainLayout>
 
 <style>
+  html,
   body {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    width: fit-content;
-    height: fit-content;
+    width: 100%;
+    height: 100%;
   }
 </style>
