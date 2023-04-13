@@ -8,9 +8,10 @@ export interface ContactUsFormInputProps {
   text: string;
   isRequiredText?: string;
   Tag: "textarea" | "input";
+  updateIsMessageSent: () => void;
 }
 
-const ContactUsFormInput = ({ labelFor, register, error, text, isRequiredText, Tag }: ContactUsFormInputProps) => {
+const ContactUsFormInput = ({ labelFor, register, error, text, isRequiredText, Tag, updateIsMessageSent }: ContactUsFormInputProps) => {
   return (
     <label htmlFor={labelFor} className='contactUsFromInput flex flex-col w-full gap-2 h-fit'>
       <span
@@ -20,9 +21,19 @@ const ContactUsFormInput = ({ labelFor, register, error, text, isRequiredText, T
       </span>
       <Tag
         {...register(labelFor, {
-          required: isRequiredText ?? false
+          required: isRequiredText ?? false,
+          pattern: {
+            value: labelFor === "email" ? /^([^ ]+@[^ ]+\.[a-z]{2,6}|)$/i : /[^]/i,
+            message: "Pass correct Email"
+          },
+          validate: (state: string) => {
+            if (state.replaceAll(' ', '').length === 0)
+              return isRequiredText;
+            return true;
+          }
         })}
         name={labelFor}
+        onChange={updateIsMessageSent}
         className={`contactUsFormInput__input focus:outline rounded-[8px] focus:outline-2 text-[1rem] sm:text-[1.2rem] max-h-[150px]
         bg-slate-200 focus:bg-white outline-white outline-offset-2 w-full py-1 px-2 min-h-[50px]`}
       />
