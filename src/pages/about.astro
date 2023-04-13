@@ -35,13 +35,11 @@ const aboutParagraphsInfo: AboutParagraphProps[] = [
 ---
 
 <MainLayout {...pageLayoutProps}>
-  <main
-    class="aboutPage flex flex-col w-full flex-grow h-full justify-center items-center"
-  >
-    <ul class="aboutParagraphsList flex flex-col gap-10 w-3/5">
+  <main class="aboutPage flex flex-col w-full flex-grow h-full p-4 justify-center items-center">
+    <ul class="aboutParagraphsList flex flex-col gap-10 h-full w-full max-w-[600px] justify-center items-center">
       {
         aboutParagraphsInfo.map((aboutParagraphProps) => (
-          <li class="aboutParagraphsList__item w-full">
+          <li class="aboutParagraphsList__item flex w-full">
             <AboutParagraph {...aboutParagraphProps} />
           </li>
         ))
@@ -51,6 +49,9 @@ const aboutParagraphsInfo: AboutParagraphProps[] = [
 </MainLayout>
 
 <style>
+  html {
+    height: 100%;
+  }
   html,
   body {
     display: flex;
