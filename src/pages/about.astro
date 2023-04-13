@@ -1,4 +1,7 @@
 ---
+import AboutParagraph, {
+  AboutParagraphProps,
+} from "@/components/astro/AboutParagraph/AboutParagraph.astro";
 import MainLayout, { MainLayoutProps } from "@/layouts/MainLayout.astro";
 
 const pageLayoutProps = {
@@ -6,31 +9,44 @@ const pageLayoutProps = {
   description: `Punto Di Sapori restaurant About page`,
   isHeaderAbsolute: false,
 } as MainLayoutProps;
+
+const aboutParagraphsInfo: AboutParagraphProps[] = [
+  {
+    text: `Welcome to our Punto Di Sapori! Our goal is to bring the taste and
+      atmosphere of Italy to your table. Our menu is carefully crafted to
+      showcase traditional Italian dishes, using only the freshest and highest
+      quality ingredients. Each dish is prepared with care and attention to
+      detail, ensuring that every bite is full of flavor.`,
+  },
+  {
+    text: `Our restaurant is more than just a place to eat – it's a place to gather
+      with friends and family, to celebrate life and enjoy the simple pleasures
+      of good food and good company. We take pride in our warm and welcoming
+      atmosphere, and our friendly staff is always ready to make your experience
+      unforgettable.`,
+  },
+  {
+    text: `We invite you to join us for a meal and experience the magic of Italian
+      cuisine. Whether it's a romantic dinner for two or a family gathering, we
+      have something for everyone. Come and taste the passion and love that we
+      put into every dish – we promise you won't be disappointed!`,
+  },
+];
 ---
 
 <MainLayout {...pageLayoutProps}>
-  <main class="aboutPage flex flex-col w-full flex-grow">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nesciunt
-    repellendus tempore minus accusantium. Illum inventore excepturi voluptates
-    explicabo vitae, eius quos? Eligendi impedit cum provident animi earum
-    facere ea fugiat, saepe dolor doloribus mollitia deleniti ipsam harum maxime
-    adipisci nulla placeat labore! Totam id quisquam nisi cum inventore
-    excepturi sequi fuga, non vitae! Nemo, dolorum neque possimus laborum
-    molestiae reiciendis earum nisi, nostrum officiis, magnam quae optio
-    assumenda. Consequuntur perspiciatis vitae et, eos veniam odit repellendus
-    autem nam, voluptatum quos fugiat quae iste! Unde impedit ea ullam nobis
-    saepe rem, consectetur alias iusto itaque molestias. Accusamus tempore animi
-    eveniet numquam totam, facere repellendus magnam incidunt tempora et
-    repellat explicabo aut ea ducimus dolores ut facilis esse molestiae,
-    deserunt doloribus laboriosam minima dolorum delectus officia. Doloremque in
-    fuga vel nobis ut necessitatibus soluta voluptatum, amet, dolorum libero,
-    eveniet aperiam harum fugiat! Saepe corporis similique, excepturi id alias
-    officia dignissimos quisquam quod placeat eius eum cumque doloremque,
-    accusantium, eos qui neque accusamus unde ad iure laborum. Veniam,
-    necessitatibus aliquid! Atque sed suscipit iusto, neque dolore rerum
-    recusandae cum dicta amet. Magnam beatae necessitatibus, sapiente, aperiam
-    ducimus a ratione ipsa ipsam explicabo optio corrupti omnis esse sed fugiat
-    sint excepturi aliquam debitis.
+  <main
+    class="aboutPage flex flex-col w-full flex-grow h-full justify-center items-center"
+  >
+    <ul class="aboutParagraphsList flex flex-col gap-10 w-3/5">
+      {
+        aboutParagraphsInfo.map((aboutParagraphProps) => (
+          <li class="aboutParagraphsList__item w-full">
+            <AboutParagraph {...aboutParagraphProps} />
+          </li>
+        ))
+      }
+    </ul>
   </main>
 </MainLayout>
 
