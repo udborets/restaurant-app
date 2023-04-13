@@ -9,7 +9,7 @@ const pageLayoutProps = {
 ---
 
 <MainLayout {...pageLayoutProps}>
-  <main class="aboutPage">
+  <main class="aboutPage flex flex-col w-full flex-grow">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nesciunt
     repellendus tempore minus accusantium. Illum inventore excepturi voluptates
     explicabo vitae, eius quos? Eligendi impedit cum provident animi earum
@@ -33,3 +33,12 @@ const pageLayoutProps = {
     sint excepturi aliquam debitis.
   </main>
 </MainLayout>
+
+<style>
+  html,
+  body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+</style>
