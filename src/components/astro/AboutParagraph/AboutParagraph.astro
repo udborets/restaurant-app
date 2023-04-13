@@ -1,0 +1,13 @@
+---
+import type { ReactNode } from "react";
+
+export interface AboutParagraphProps {
+  text: ReactNode;
+}
+
+const { text } = Astro.props as AboutParagraphProps;
+---
+
+<p class="aboutParagraph w-full text-[1.5rem]">
+  {text}
+</p>
