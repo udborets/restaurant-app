@@ -52,14 +52,6 @@ Start the server
 
 ## Todo :clipboard:
 
-- **think on site design**
-
-- **add home page content**
-
-- **add about page**
-
-- **add ability to contact restaurant with email**
-
 - **add astro sitemap**
 
 - **surely something else 🙃**
