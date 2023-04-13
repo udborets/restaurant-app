@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form"
+import { useState } from 'react';
 
 import ContactUsFormInput from "@/components/react/ContactUsFormInput/ContactUsFormInput";
 
@@ -12,17 +13,22 @@ export interface ContactUsFormProps {
 }
 
 const ContactUsForm = ({ inputsProps }: ContactUsFormProps) => {
+  const [isMessageSent, setIsMessageSent] = useState<boolean>(false);
   const { register,
     formState: { errors },
     handleSubmit,
     reset,
   } = useForm({
     mode: "onBlur",
+    reValidateMode: "onChange",
   });
-  function onSubmit(e: any) {
-    console.log(e)
-    reset();
+
+  function onSubmit() {
+    reset(() => {
+      setIsMessageSent(true);
+    });
   }
+
   return (
     <div className="contactUsForm max-w-[600px] w-full bg-black py-8 px-6 rounded-[15px] relative">
       <form
@@ -31,18 +37,28 @@ const ContactUsForm = ({ inputsProps }: ContactUsFormProps) => {
         onSubmit={handleSubmit(onSubmit)}
       >
         {inputsProps.map((inputProps) => (
-          <ContactUsFormInput {...inputProps} error={errors} register={register} key={inputProps.labelFor} />
+          <ContactUsFormInput
+            {...inputProps}
+            updateIsMessageSent={() => { if (isMessageSent) setIsMessageSent(false) }}
+            error={errors}
+            register={register}
+            key={inputProps.labelFor}
+          />
         ))}
         <button
           type="submit"
+          disabled={isMessageSent}
           className={`contactUsForm__sendButton text-white px-4 py-3 
-          bg-gray-800 outline-white outline-2 focus:outline active:outline-none outline-offset-2
-          rounded-[8px] hover:bg-gray-900 transition-colors duration-[.2s] ease-out text-[1.2rem] font-bold my-[1rem]`}
+          outline-white outline-2 focus:outline active:outline-none outline-offset-2 
+            rounded-[8px] transition-colors duration-[.2s] ease-out text-[1.2rem] font-bold my-[1rem] 
+          ${isMessageSent
+              ? " bg-green-600"
+              : " hover:bg-gray-900 bg-gray-800"}`}
         >
-          Send message
+          {isMessageSent ? "Message sent" : "Send message"}
         </button>
         <span className={`contactUsForm__requireHelpText absolute right-[20px] bottom-[20px] text-white`}>
-          <span className={`contactUsForm__ text-red-600`}>*</span> - required fields
+          <span className={`contactUsForm__redStar text-red-600`}>*</span> - required fields
         </span>
       </form>
     </div>
