@@ -1,4 +1,5 @@
 ---
+import Footer from "@/components/astro/Footer/Footer.astro";
 import Header from "@/components/astro/Header/Header.astro";
 import type { NavbarLinkProps } from "@/components/astro/NavbarLink/NavbarLink.astro";
 import "@/styles/global.scss";
@@ -44,5 +45,6 @@ const navbarLinks = [
   <body>
     <Header isAbsolute={isHeaderAbsolute} navbarLinks={navbarLinks} />
     <slot />
+    <Footer />
   </body>
 </html>
