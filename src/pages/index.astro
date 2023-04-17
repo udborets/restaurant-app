@@ -4,11 +4,17 @@ import MainLayout, { MainLayoutProps } from "@/layouts/MainLayout.astro";
 import HomePagePost, {
   HomePagePostProps,
 } from "@/components/astro/HomePagePost/HomePagePost.astro";
+
 import imageSwapperImage1 from "@/assets/images/imageSwapper/1.jpg";
 import imageSwapperImage2 from "@/assets/images/imageSwapper/2.jpg";
 import imageSwapperImage3 from "@/assets/images/imageSwapper/3.jpg";
 import imageSwapperImage4 from "@/assets/images/imageSwapper/4.jpg";
 import imageSwapperImage5 from "@/assets/images/imageSwapper/5.jpg";
+
+import homePagePost1 from "@/assets/images/homePagePosts/1.jpg";
+import homePagePost2 from "@/assets/images/homePagePosts/2.png";
+import homePagePost3 from "@/assets/images/homePagePosts/3.jpg";
+import homePagePost4 from "@/assets/images/homePagePosts/4.jpg";
 
 const pageLayoutProps = {
   title: "Punto Di Sapori",
@@ -29,29 +35,25 @@ const postsProps = [
     text: "Punto Di Sapori is a dream come true for lovers of authentic Italian cuisine",
     isImgRight: true,
     title: "Italian food",
-    imageSrc:
-      "https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591",
+    imageSrc: homePagePost1,
   },
   {
     text: "At our restaurant, you'll be transported to the streets of Rome with every bite of our handmade pasta and wood-fired pizza",
     isImgLeft: true,
     title: "Get ready for the trip",
-    imageSrc:
-      "https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591",
+    imageSrc: homePagePost2,
   },
   {
     text: "Our menu is carefully crafted with the freshest ingredients and traditional Italian recipes passed down through generations",
     isImgRight: true,
     title: "Menu",
-    imageSrc:
-      "https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591",
+    imageSrc: homePagePost3,
   },
   {
     text: "From the cozy atmosphere to the warm and friendly service, our Italian restaurant is the perfect place to enjoy a taste of Italy",
     isImgLeft: true,
     title: "Service",
-    imageSrc:
-      "https://www.refrigeratedfrozenfood.com/ext/resources/NEW_RD_Website/DefaultImages/default-pasta.jpg?1430942591",
+    imageSrc: homePagePost4,
   },
 ] as HomePagePostProps[];
 ---
